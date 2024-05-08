@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 50px;
+        }
+        .Clock
+        {
+         height: 50px;
+         width:300px;
+         border:2px black solid;
+         margin:100px auto;
+         box-shadow: 0 0 10px rgba(0,0,0,0.2);
+         color:white;
+         border-radius: 10px;
+         background-color:blue;
+         display: block;
+         text-align: center;
+         align-items: center;
+         padding-top: 20px;
+         padding-bottom: 20px;
+        }
+        
+        </style>
+
+<body>
+    <div id="clock" class="Clock"></div>
+    <script>
+        function updateClock()
+        {
+         const date = new Date();
+         const timeString = date.toLocaleTimeString();
+         document.getElementById('clock').innerText = timeString ;
+        }
+        setInterval(updateClock , 1000);
+          updateClock()
+         </script>
+    
+</body>
+</html>

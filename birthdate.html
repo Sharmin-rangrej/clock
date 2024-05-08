@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            height: 500px;
+            margin: 100px auto;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-left: 300px;
+         }
+        .btn1
+        {
+            height: 45px;
+            width:200px;
+            font-size: 25px; 
+            margin:10px auto;
+            padding:5px,5px;
+            border: solid,blue,2px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            background-color: skyblue;
+ }
+        .input
+        {
+            height: 40px;
+            width:200px;
+            font-size: 25px; 
+            margin:10px auto;
+            padding:5px,5px;
+            border: solid,blue,2px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            background-color: lightpink;
+
+        }
+        .label
+        {
+            font-size: 25px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+        </style>
+</head>
+<body>
+    <div id="result" class="container">
+    <label for="birthdate" class="label">Enter your age:</label>
+    <input type="date" id="birthdate" class="input"/>
+    <button class="btn1" onclick="calculateAge()">Calculate Age</button>
+    </div>
+<script>
+        function calculateAge()
+        {
+         const birthDateInput = document.getElementById('birthdate').value;
+         const birthdate = new Date(birthDateInput);
+         const now = new Date();
+
+         let age = now.getFullYear() - birthdate.getFullYear();
+         
+
+         const monthDiff = now.getMonth() - birthdate.getMonth();
+
+
+        if(monthDiff<0 || (monthDiff === 0 && now.getDate()< birthdate.getDate()) )
+         {
+            age--;
+        }
+         
+       console.log(age);
+    }
+</script>
+</body>
+</html>
